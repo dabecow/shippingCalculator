@@ -8,11 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Thomann calculator");
-    this->setWindowIcon(QIcon(":/new/icons/to4ka.icns"));
+    this->setWindowIcon(QIcon(":/new/icons/to4ka.ico"));
     QRegExp rx("[+]?[0-9]*\\.?[0-9]?[0-9]");
     ui->priceEdit->setValidator(new QRegExpValidator(rx));
     ui->euroValueEdit->setValidator(new QRegExpValidator(rx));
-    ui->questionMark->setToolTip("Курс евро вашего банка, а не ЦБ. \nПолная цена с доставкой, как \nуказано в конце корзины в €.");
+    ui->questionMark->setToolTip("<p>Курс евро вашего банка, а не ЦБ.</p> <p>Полная цена с доставкой, как  указано в конце корзины в €.</p> <br> <img src=':/new/icons/tip.png'>");
 }
 
 MainWindow::~MainWindow()
@@ -39,8 +39,6 @@ void MainWindow::on_button_clicked()
     price*=euroToRubValue;
     price+=tax;
 
-
-//    ui->priceValueLabel->repaint();
     if (price <= 0) ui->priceValueLabel->setText("Error");
     else ui->priceValueLabel->setText(QString::number(price));
     ui->priceValueLabel->repaint();
