@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/icons">
+        <file>to4ka.icns</file>
+        <file>question-mark.png</file>
+    </qresource>
+</RCC>
